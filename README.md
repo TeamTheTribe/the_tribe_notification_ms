@@ -1,0 +1,2 @@
+# the_tribe_notification_ms
+Module drupal microservice connection notifications
