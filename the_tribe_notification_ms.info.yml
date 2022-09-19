@@ -1,0 +1,5 @@
+name: 'The Tribe Notification MS'
+description: 'Library for micro service integration'
+type: module
+author: The Tribe
+core_version_requirement : ^8 || ^9

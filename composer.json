@@ -1,0 +1,16 @@
+{
+    "name": "abi/notifications",
+    "description": "Notifications Microservice",
+    "type": "drupal-custom-module",
+    "keywords": ["Drupal"],
+    "license": "proprietary",
+    "authors": [
+        {
+            "name": "The Tribe"
+        }
+    ],
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
+
+

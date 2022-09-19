@@ -1,0 +1,45 @@
+the_tribe_notification_ms.getResourceNotification:
+  path: '/api/notifications-ms/resource'
+  defaults:
+    _controller: 'Drupal\the_tribe_notification_ms\Controller\NotificationController::getResourceNotification'
+    _title: 'getResourceNotification'
+  methods:  [GET]
+  requirements:
+    _access: 'TRUE'
+
+the_tribe_notification_ms.getNotifications:
+  path: '/api/notifications-ms'
+  defaults:
+    _controller: 'Drupal\the_tribe_notification_ms\Controller\NotificationController::getNotifications'
+    _title: 'getNotifications'
+  methods:  [GET]
+  requirements:
+    _access: 'TRUE'
+
+the_tribe_notification_ms.save:
+  path: '/api/notifications-ms'
+  defaults:
+    _controller: 'Drupal\the_tribe_notification_ms\Controller\NotificationController::save'
+    _title: 'save'
+  methods:  [PUT]
+  requirements:
+    _access: 'TRUE'
+
+
+the_tribe_notification_ms.readNotification:
+  path: '/api/notifications-ms/{id}'
+  defaults:
+    _controller: 'Drupal\the_tribe_notification_ms\Controller\NotificationController::readNotification'
+    _title: 'getNotifications'
+  methods:  [PUT]
+  requirements:
+    _access: 'TRUE'
+
+the_tribe_notification_ms.deleteNotification:
+  path: '/api/notifications-ms/{id}'
+  defaults:
+    _controller: 'Drupal\the_tribe_notification_ms\Controller\NotificationController::deleteNotification'
+    _title: 'deleteNotification'
+  methods:  [DELETE]
+  requirements:
+    _access: 'TRUE'
