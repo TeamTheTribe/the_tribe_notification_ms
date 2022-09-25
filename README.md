@@ -7,8 +7,9 @@ Module drupal microservice connection notifications (Version 0.1.0)
    project/modules/custom/the_tribe_notification_ms
 ```
 
-# Parametrizar uso de servicio si el usuario contiene identificador establecido (getIdentityUser)
+# Autorización de servicio
 1. Editar o sobreescribir metodo (authorize())
+Establecer configuración para autorizar el uso del servicio si el usuario contiene identificador establecido (getIdentityUser).
 ```
     private function authorize()
     {
