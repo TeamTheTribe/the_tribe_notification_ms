@@ -24,6 +24,10 @@ final class NotificationService
 
     public function getNotifications()
     {
+        if($this->authorize()){
+            throw new Exception('Not authorized by user ID permissions');
+        }
+
         try {
             
             $headers = [
@@ -75,6 +79,10 @@ final class NotificationService
 
     public function readNotification(string $notificationId)
     {
+        if($this->authorize()){
+            throw new Exception('Not authorized by user ID permissions');
+        }
+
         try {
             $headers = [
                 'Content-Type: application/json',
@@ -98,6 +106,12 @@ final class NotificationService
 
     public function deleteNotification(string $notificationId)
     {
+
+        if($this->authorize()){
+            throw new Exception('Not authorized by user ID permissions');
+        }
+
+        
         try {
             $headers = [
                 'Content-Type: application/json',
@@ -134,6 +148,11 @@ final class NotificationService
             exit;
             return $th;
         }
+    }
+
+    private function authorize()
+    {
+        return true;
     }
 
     private function getIdentityUser()
@@ -190,5 +209,6 @@ final class NotificationService
             'code' => $httpCode
         ];
     }
+    
 
 }
