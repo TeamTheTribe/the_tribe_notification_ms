@@ -26,7 +26,10 @@ class  NotificationController extends ControllerBase{
         {
             throw new Exception($response['message']);
         }
-        return new JsonResponse(json_decode($response['body'], true), $response['code']);
+        return new JsonResponse(
+            json_decode($response->getBody()->getContents(), true), 
+            $response->getStatusCode()
+        );
     }
 
     public function save(Request $request)
@@ -42,7 +45,10 @@ class  NotificationController extends ControllerBase{
         {
             throw new Exception($response['message']);
         }
-        return new JsonResponse(json_decode($response['body'], true), $response['code']);
+        return new JsonResponse(
+            json_decode($response->getBody()->getContents(), true), 
+            $response->getStatusCode()
+        );
     }
 
     public function readNotification($notificationId)
@@ -52,7 +58,10 @@ class  NotificationController extends ControllerBase{
         {
             throw new Exception($response['message']);
         }
-        return new JsonResponse(json_decode($response['body'], true), $response['code']);
+        return new JsonResponse(
+            json_decode($response->getBody()->getContents(), true), 
+            $response->getStatusCode()
+        );
     }
 
     public function deleteNotification($notificationId)
@@ -62,7 +71,10 @@ class  NotificationController extends ControllerBase{
         {
             throw new Exception($response['message']);
         }
-        return new JsonResponse(json_decode($response['body'], true), $response['code']);
+        return new JsonResponse(
+            json_decode($response->getBody()->getContents(), true), 
+            $response->getStatusCode()
+        );
     }
 
     public function getResourceNotification(){
