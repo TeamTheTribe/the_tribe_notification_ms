@@ -22,10 +22,6 @@ class  NotificationController extends ControllerBase{
     public function getNotifications()
     {
         $response = $this->notificationService->getNotifications();
-        if(isset($response['try']))
-        {
-            throw new Exception($response['message']);
-        }
         return new JsonResponse(
             json_decode($response->getBody()->getContents(), true), 
             $response->getStatusCode()
@@ -41,10 +37,6 @@ class  NotificationController extends ControllerBase{
             $request->get("category_id"),
             $request->get("group_id")
         );
-        if(isset($response['try']))
-        {
-            throw new Exception($response['message']);
-        }
         return new JsonResponse(
             json_decode($response->getBody()->getContents(), true), 
             $response->getStatusCode()
@@ -54,10 +46,6 @@ class  NotificationController extends ControllerBase{
     public function readNotification($notificationId)
     {
         $response = $this->notificationService->readNotification($notificationId);
-        if(isset($response['try']))
-        {
-            throw new Exception($response['message']);
-        }
         return new JsonResponse(
             json_decode($response->getBody()->getContents(), true), 
             $response->getStatusCode()
@@ -67,10 +55,6 @@ class  NotificationController extends ControllerBase{
     public function deleteNotification($notificationId)
     {
         $response = $this->notificationService->deleteNotification($notificationId);
-        if(isset($response['try']))
-        {
-            throw new Exception($response['message']);
-        }
         return new JsonResponse(
             json_decode($response->getBody()->getContents(), true), 
             $response->getStatusCode()
