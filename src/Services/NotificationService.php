@@ -24,7 +24,7 @@ final class NotificationService
 
     public function getNotifications()
     {
-        if($this->authorize()){
+        if(!$this->authorize()){
             throw new Exception('Not authorized by user ID permissions');
         }
 
@@ -79,7 +79,7 @@ final class NotificationService
 
     public function readNotification(string $notificationId)
     {
-        if($this->authorize()){
+        if(!$this->authorize()){
             throw new Exception('Not authorized by user ID permissions');
         }
 
@@ -107,7 +107,7 @@ final class NotificationService
     public function deleteNotification(string $notificationId)
     {
 
-        if($this->authorize()){
+        if(!$this->authorize()){
             throw new Exception('Not authorized by user ID permissions');
         }
 
