@@ -9,8 +9,10 @@
             "name": "The Tribe"
         }
     ],
+    "require": {
+        "php": "^7.3|^8.0",
+        "guzzlehttp/guzzle": ">=6.3"
+    },
     "minimum-stability": "dev",
     "prefer-stable": true
 }
-
-
