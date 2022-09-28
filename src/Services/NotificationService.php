@@ -141,6 +141,10 @@ final class NotificationService
 
     private function getIdentityUser()
     {
-        return $this->currentUser->id();
+        $sharp = \Drupal::request()->getSession()->get('sharp_id', null);
+        if(is_null($sharp)){
+            throw new Exception("Session does not have sharp_id value");
+        }
+        return $sharp;
     }
 }
