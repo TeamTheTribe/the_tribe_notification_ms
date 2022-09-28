@@ -1,5 +1,5 @@
 {
-    "name": "the-tribe/the-tribe-notification-ms",
+    "name": "the-tribe/the_tribe_notification_ms",
     "description": "Notifications Microservice",
     "type": "drupal-custom-module",
     "keywords": ["Drupal"],
