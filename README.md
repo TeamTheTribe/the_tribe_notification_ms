@@ -11,7 +11,7 @@ Module drupal microservice connection notifications (Version 0.1.0)
       }
    ]
 ```
-2. Instalar el módulo a través de Compose
+2. Instalar el módulo a través de Composer
 ```
    composer require the-tribe/the_tribe_notification_ms
 ```
