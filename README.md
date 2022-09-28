@@ -2,36 +2,23 @@
 Module drupal microservice connection notifications (Version 0.1.0)
 
 # Instalacion modulo
-1. Descargar repositorio o Zip eh incluir en el proyecto
+1. Importar el repositorio en el composer.json del proyecto
 ```
-   project/modules/custom/the_tribe_notification_ms
+   repositories: [
+      {
+         "type": "vcs",
+         "url": "git@github.com:TeamTheTribe/the_tribe_notification_ms.git"
+      }
+   ]
+```
+2. Instalar el módulo a través de Compose
+```
+   composer require the-tribe/the_tribe_notification_ms
 ```
 
 # Autorización de servicio
-1. Editar o sobreescribir metodo (authorize())
-- Establecer configuración para autorizar el uso del servicio si el usuario contiene identificador establecido (getIdentityUser).
+1. Modificar inicio de sesión para incluir sharp id
+- En el proceso de login añadir la linea
 ```
-    private function authorize()
-    {
-        return true;
-    }
-```
-
-# Definir identificador notificaciones por usuario
-1. Editar o sobreescribir metodo (getIdentityUser())
-```
-    private function getIdentityUser()
-    {
-        return $this->currentUser->id();
-        /*
-        Identifier parameter definition
-
-        $user = User::load($this->currentUser->id());
-        $sharp_id = $user->get('field_sharp_id')->value;
-        if (!$sharp_id) {
-            throw new \Exception("There is no session variable sharp_id");
-        }
-        return $sharp_id;
-        */
-    }
+    \Drupal::request()->getSession()->set("sharp_id", SHARP_ID);
 ```
