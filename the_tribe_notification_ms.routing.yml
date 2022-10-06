@@ -15,6 +15,7 @@ the_tribe_notification_ms.getNotifications:
   methods:  [GET]
   requirements:
     _access: 'TRUE'
+    _csrf_request_header_token: 'FALSE'
 
 the_tribe_notification_ms.save:
   path: '/api/notifications-ms'
@@ -24,7 +25,7 @@ the_tribe_notification_ms.save:
   methods:  [PUT]
   requirements:
     _access: 'TRUE'
-
+    _csrf_request_header_token: 'FALSE'
 
 the_tribe_notification_ms.readNotification:
   path: '/api/notifications-ms/{id}'
@@ -34,6 +35,7 @@ the_tribe_notification_ms.readNotification:
   methods:  [PUT]
   requirements:
     _access: 'TRUE'
+    _csrf_request_header_token: 'FALSE'
 
 the_tribe_notification_ms.deleteNotification:
   path: '/api/notifications-ms/{id}'
@@ -43,3 +45,4 @@ the_tribe_notification_ms.deleteNotification:
   methods:  [DELETE]
   requirements:
     _access: 'TRUE'
+    _csrf_request_header_token: 'FALSE'
