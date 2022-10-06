@@ -43,18 +43,18 @@ class  NotificationController extends ControllerBase{
         );
     }
 
-    public function readNotification($notificationId)
+    public function readNotification($id)
     {
-        $response = $this->notificationService->readNotification($notificationId);
+        $response = $this->notificationService->readNotification($id);
         return new JsonResponse(
             json_decode($response->getBody()->getContents(), true), 
             $response->getStatusCode()
         );
     }
 
-    public function deleteNotification($notificationId)
+    public function deleteNotification($id)
     {
-        $response = $this->notificationService->deleteNotification($notificationId);
+        $response = $this->notificationService->deleteNotification($id);
         return new JsonResponse(
             json_decode($response->getBody()->getContents(), true), 
             $response->getStatusCode()
