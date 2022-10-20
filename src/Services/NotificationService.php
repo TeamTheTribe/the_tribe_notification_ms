@@ -25,7 +25,7 @@ final class NotificationService
         $this->currentUser = \Drupal::currentUser();
     }
 
-    public function getNotifications()
+    public function getNotifications(int $page = 1)
     {
         if(!$this->authorize()){
             throw new Exception('Not authorized by user ID permissions');
@@ -35,8 +35,10 @@ final class NotificationService
             $headers = [
                 'Content-Type' => 'application/json'
             ];
-    
-            return $this->client->request('GET', $this->endPoint."/".$this->getIdentityUser(), [
+            
+            
+
+            return $this->client->request('GET', "$this->endPoint/{$this->getIdentityUser()}?page=$page", [
                 'headers' => $headers
             ]);
         } catch (BadResponseException $th) {
