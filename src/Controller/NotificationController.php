@@ -21,7 +21,8 @@ class  NotificationController extends ControllerBase{
 
     public function getNotifications()
     {
-        $response = $this->notificationService->getNotifications();
+        $page = \Drupal::request()->query->get('page'); 
+        $response = $this->notificationService->getNotifications($page ?? 1);
         return new JsonResponse(
             json_decode($response->getBody()->getContents(), true), 
             $response->getStatusCode()
