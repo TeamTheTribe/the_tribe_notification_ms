@@ -70,7 +70,7 @@ final class NotificationService
     
             return $this->client->request('PUT', $this->endPoint, [
                 'headers' => $headers,
-                'body' => json_encode($body)
+                'json' => $body
             ]);
 
         
