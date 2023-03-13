@@ -13,13 +13,13 @@ final class NotificationService
     private $appURL;
     private $notificationURL;
     private $endPoint;
-    protected $currentUser; 
+    protected $currentUser;
 
 
     public function __construct()
     {
         $this->appURL = \Drupal::request()->getSchemeAndHttpHost();
-        $this->notificationURL =  getenv('MS_NOTIFICATION_URL');
+        $this->notificationURL =  trim(getenv('MS_NOTIFICATION_URL'));
         $this->endPoint = $this->notificationURL.'/api/notifications';
         $this->client = new Client();
         $this->currentUser = \Drupal::currentUser();
@@ -143,10 +143,9 @@ final class NotificationService
 
     private function getIdentityUser()
     {
-        $sharp = \Drupal::request()->getSession()->get('sharp_id', null);
-        if(is_null($sharp)){
-            throw new Exception("Session does not have sharp_id value");
-        }
-        return $sharp;
+        $user = \Drupal\user\Entity\User::load(\Drupal::currentUser()->id());
+        return $user->get(
+            $this->config("the_tribe_notifications_ms.config")->get("sharp_field_name")
+        )->getValue();
     }
 }

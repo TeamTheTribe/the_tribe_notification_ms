@@ -1,0 +1,6 @@
+the_tribe_notification_ms.config:
+  title: 'Configuración módulo Notificaciones'
+  description: 'Configuración módulo Notificaciones'
+  route_name: the_tribe_notification_ms.config
+  weight: 121
+  parent: system.admin_config_services

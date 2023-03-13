@@ -1,3 +1,11 @@
+the_tribe_notification_ms.config:
+  path: '/admin/config/services/the_tribe_notification_ms'
+  defaults:
+    _title: 'The tribe notification ms config.'
+    _form: 'Drupal\the_tribe_notification_ms\Form\FormConfigTheTribeNotificaciones'
+  requirements:
+    _permission: 'access config'
+
 the_tribe_notification_ms.getResourceNotification:
   path: '/api/notifications-ms/notifications.js'
   defaults:

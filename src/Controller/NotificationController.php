@@ -9,14 +9,22 @@ use Exception;
 use GuzzleHttp\Psr7\Response;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\JsonResponse;
+use Symfony\Component\DependencyInjection\ContainerInterface;
 
 class  NotificationController extends ControllerBase{
     
     protected $notificationService;
 
-    public function __construct()
+    public function __construct(NotificationService $notificationService)
     {
-        $this->notificationService = new NotificationService();
+        $this->notificationService = $notificationService;
+    }
+
+    public static function create(ContainerInterface $container)
+    {
+        return new static(
+            $container->get("the_tribe_notification_ms.notification_service")
+        );
     }
 
     public function getNotifications()
