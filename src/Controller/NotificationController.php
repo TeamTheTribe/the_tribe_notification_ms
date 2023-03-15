@@ -15,16 +15,9 @@ class  NotificationController extends ControllerBase{
     
     protected $notificationService;
 
-    public function __construct(NotificationService $notificationService)
+    public function __construct()
     {
-        $this->notificationService = $notificationService;
-    }
-
-    public static function create(ContainerInterface $container)
-    {
-        return new static(
-            $container->get("the_tribe_notification_ms.notification_service")
-        );
+        $this->notificationService = new NotificationService();
     }
 
     public function getNotifications()

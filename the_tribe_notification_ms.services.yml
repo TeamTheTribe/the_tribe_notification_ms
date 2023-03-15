@@ -1,7 +1,0 @@
-services:
-  the_tribe_notification_ms.identifier_getter:
-    class: Drupal\the_tribe_notification_ms\Contracts\IdentifierGetter
-
-  the_tribe_notification_ms.notification_service:
-    class: Drupal\the_tribe_notification_ms\Services\NotificationService
-    arguments: ["@the_tribe_notification_ms.identifier_getter"]

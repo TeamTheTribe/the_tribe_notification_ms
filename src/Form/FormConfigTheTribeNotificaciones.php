@@ -28,7 +28,7 @@ class FormConfigTheTribeNotificaciones extends ConfigFormBase {
       '#default_value' => $config->get('status'),
     ];
     $form['sharp_field_name'] = [
-      '#type' => 'text',
+      '#type' => 'textfield',
       '#title' => t('Escriba el nombre del campo para el sharp id'),
       '#required' => TRUE,
       '#default_value' => $config->get('sharp_field_name'),

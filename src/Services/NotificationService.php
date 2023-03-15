@@ -143,9 +143,13 @@ final class NotificationService
 
     private function getIdentityUser()
     {
-        $user = \Drupal\user\Entity\User::load(\Drupal::currentUser()->id());
-        return $user->get(
-            $this->config("the_tribe_notifications_ms.config")->get("sharp_field_name")
-        )->getValue();
+        $sharp = \Drupal::request()->getSession()->get('sharp_id', null);
+        if(is_null($sharp)){
+            $user = \Drupal\user\Entity\User::load(\Drupal::currentUser()->id());
+            $sharp = $user->get(
+                \Drupal::config("the_tribe_notifications_ms.config")->get("sharp_field_name")
+            )->getValue();
+        }
+        return $sharp;
     }
 }
